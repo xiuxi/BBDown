@@ -106,6 +106,8 @@ namespace BBDown
 						System.Environment.Exit(0);
 					}
 				}
+				// C:\gitHub\java_ubuntu_windows\bat\哔哩哔哩下载.bat
+				// 超市退出应用程序，重启。call C:\gitHub\java_ubuntu_windows\bat\download.bat %1
 				// Console.WriteLine("time="+(seconds - prev_seconds));
 
 				UpdateText(text+" "+(seconds - prev_seconds));
