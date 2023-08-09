@@ -73,7 +73,8 @@ namespace BBDown
 				ResetSpeedTimer();
             }
         }
-
+		string prev_text = "";
+		int prev_seconds = 0;
         private void TimerHandler(object? state)
 		{
 			lock (timer)
@@ -87,6 +88,26 @@ namespace BBDown
 					percent,
 					animation[animationIndex++ % animation.Length],
                     speedString);
+				string text2 = ""+percent;
+				TimeSpan t = (DateTime.UtcNow - new DateTime(1970, 1, 1));
+				int seconds = (int)t.TotalSeconds;
+				if (prev_seconds == 0) {
+					prev_seconds = seconds;
+					prev_text = text2;
+				} else if (prev_text != text2) {
+					prev_seconds = seconds;
+					prev_text = text2;
+				} else {
+					if (seconds - prev_seconds >=
+						//1
+					 	1*60
+					 ) {
+						Console.WriteLine("time="+(seconds - prev_seconds));
+						System.Environment.Exit(0);
+					}
+				}
+				// Console.WriteLine("time="+(seconds - prev_seconds));
+
 				UpdateText(text);
 
 				ResetTimer();
