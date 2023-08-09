@@ -1,0 +1,8 @@
+D:\gitHub\BBDown\BBDown>
+dotnet add package QRCoder --version 1.4.3
+dotnet add package SharpZipLib --version 1.4.2
+dotnet add package System.CommandLine --version 2.0.0-beta4.22272.1
+
+        <PackageReference Include="" Version="" />
+    <PackageReference Include="" Version="" />
+    

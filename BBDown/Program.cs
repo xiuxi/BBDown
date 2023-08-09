@@ -774,7 +774,7 @@ namespace BBDown
                                 {
                                     // 下载前先清理残片
                                     foreach (var file in new DirectoryInfo(Path.GetDirectoryName(videoPath)!).EnumerateFiles("*.?clip")) file.Delete();
-                                    Log($"开始多线程下载P{p.index}视频...");
+                                    Log($"开始多线程下载2P{p.index}视频...");
                                     await MultiThreadDownloadFileAsync(videoTracks[vIndex].baseUrl, videoPath, useAria2c, aria2cArgs, forceHttp);
                                     Log("合并视频分片...");
                                     CombineMultipleFilesIntoSingleFile(GetFiles(Path.GetDirectoryName(videoPath)!, ".vclip"), videoPath);
@@ -798,7 +798,7 @@ namespace BBDown
                                 {
                                     // 下载前先清理残片
                                     foreach (var file in new DirectoryInfo(Path.GetDirectoryName(audioPath)!).EnumerateFiles("*.?clip")) file.Delete();
-                                    Log($"开始多线程下载P{p.index}音频...");
+                                    Log($"开始多线程下载3P{p.index}音频...");
                                     await MultiThreadDownloadFileAsync(audioTracks[aIndex].baseUrl, audioPath, useAria2c, aria2cArgs, forceHttp);
                                     Log("合并音频分片...");
                                     CombineMultipleFilesIntoSingleFile(GetFiles(Path.GetDirectoryName(audioPath)!, ".aclip"), audioPath);
@@ -903,7 +903,7 @@ namespace BBDown
                                     {
                                         // 下载前先清理残片
                                         foreach (var file in new DirectoryInfo(Path.GetDirectoryName(videoPath)!).EnumerateFiles("*.?clip")) file.Delete();
-                                        Log($"开始多线程下载P{p.index}视频, 片段({(i + 1).ToString(pad)}/{clips.Count})...");
+                                        Log($"开始多线程下载1P{p.index}视频, 片段({(i + 1).ToString(pad)}/{clips.Count})...");
                                         await MultiThreadDownloadFileAsync(link, videoPath, useAria2c, aria2cArgs, forceHttp);
                                         Log("合并视频分片...");
                                         CombineMultipleFilesIntoSingleFile(GetFiles(Path.GetDirectoryName(videoPath)!, ".vclip"), videoPath);
