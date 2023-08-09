@@ -108,7 +108,7 @@ namespace BBDown
 				}
 				// Console.WriteLine("time="+(seconds - prev_seconds));
 
-				UpdateText(text);
+				UpdateText(text+" "+(seconds - prev_seconds));
 
 				ResetTimer();
 			}
